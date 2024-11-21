@@ -2,51 +2,45 @@
 
 <%- include ../partials/header.ejs %>
 <%- include ../partials/navbar.ejs %>
-
 <main class="container">
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header">
-                <div class="collapsed btn container-fluid">
-                    <div class="row">  
-                        <div class="col-3 text-center">Title</div>
-                        <div class="col-3 text-center">Date and Time</div>
-                        <div class="col-3 text-center">User</div>
-                        <div class="col-1 text-center">Priority</div>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h1><%= title %></h1>
+            <br>
+            <a href="/bookslist/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add Book
+            </a>
+            <table class="table table-bordered table-striped table-hover">
+                <tr class="d-flex">
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-2">Author</th>
+                    <th class="text-center col-1">Published</th>
+                    <th class="col-4">Description</th>
+                    <th class="text-center col-1">Price</th>
+                </tr>
+                <% for(let count=0;count<AssignmentList.length;count++) { %>
+                <tr class="d-flex">
+                    <td class="text-center col-2"><%= AssignmentList[count].Name %></td>
+                    <td class="text-center col-2"><%= AssignmentList[count].class %></td>
+                    <td class="text-center col-1"><%=AssignmentList[count].duedate%></td>
+                    <td class="col-4"><%= AssignmentList[count].description %> </td>
+                    <td class="text-center col-1"><%= AssignmentList[count].estTimeToComplete %></td>
+                    <td class="text-center col-1">
+                        <a href="/bookslist/edit/<%= AssignmentList[count]._id%>"
+                            class="btn btn-primary btn-sm">
+                        <i class="fas fa-pencil-alt"></i>Edit
+                    </a>
+                    </td>
+                    <td class="text-center col-1">
+                        <a href="/bookslist/delete/<%= AssignmentList[count]._id%>"
+                            class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i>Delete
+                    </a>
+                    </td>
+                </tr>    
+                    <%} %>
+            </table>
         </div>
     </div>
-
-    <% for (let i = 0; i < TicketList.length; i++) { %>
-        <div class="card">
-            <div class="card-header">
-                <a class="collapsed btn container-fluid" data-bs-toggle="collapse" href="#collapse<%= i %>">
-                    <div class="row">  
-                        <div class="col-3 text-center"><%= TicketList[i].Title %></div>
-                        <div class="col-3 text-center"><%= TicketList[i].Date %></div>
-                        <div class="col-3 text-center"><%= TicketList[i].Username %></div>
-                        <div class="col-1 text-center"><%= TicketList[i].Priority %></div>
-                        <div class="col-1 text-center"><i class="fa-solid fa-angle-down"></i></div>
-                    </div>
-                </a>
-            </div>
-            <div id="collapse<%= i %>" class="collapse" data-bs-parent="#accordion">
-                <div class="card-body">
-                    <p><%= TicketList[i].Description %></p>
-                    <div class="text-end">
-                        <a href="/tickets/edit/<%= TicketList[i]._id %>" class="btn btn-primary btn-sm">
-                            <i class="fas fa-pencil-alt"></i> Edit
-                        </a>
-                        <a href="/tickets/delete/<%= TicketList[i]._id %>" class="btn btn-danger btn-sm"> 
-                            <i class="fas fa-trash-alt"></i> Delete
-                        </a>
-                    </div>
-                </div> 
-            </div>
-        </div>
-    <% } %>
-</main> <!-- External source: https://www.w3schools.com/bootstrap5/bootstrap_collapse.php -->
-
+</main>
 <%- include ../partials/footer.ejs %>

@@ -1,46 +1,45 @@
-<!-- List - Arvin -->
-
 <%- include ../partials/header.ejs %>
 <%- include ../partials/navbar.ejs %>
+<div id = wrapper>
 <main class="container">
-    <div class="row">
+    <div class="row">      
         <div class="offset-md-1 col-md-10">
-            <h1><%= title %></h1>
-            <br>
-            <a href="/bookslist/add" class="btn btn-primary" role="button">
-                <i class="fas fa-plus-circle"></i> Add Book
-            </a>
-            <table class="table table-bordered table-striped table-hover">
-                <tr class="d-flex">
-                    <th class="text-center col-2">Name</th>
-                    <th class="text-center col-2">Author</th>
-                    <th class="text-center col-1">Published</th>
-                    <th class="col-4">Description</th>
-                    <th class="text-center col-1">Price</th>
-                </tr>
-                <% for(let count=0;count<AssignmentList.length;count++) { %>
-                <tr class="d-flex">
-                    <td class="text-center col-2"><%= AssignmentList[count].Name %></td>
-                    <td class="text-center col-2"><%= AssignmentList[count].class %></td>
-                    <td class="text-center col-1"><%=AssignmentList[count].duedate%></td>
-                    <td class="col-4"><%= AssignmentList[count].description %> </td>
-                    <td class="text-center col-1"><%= AssignmentList[count].estTimeToComplete %></td>
-                    <td class="text-center col-1">
-                        <a href="/bookslist/edit/<%= AssignmentList[count]._id%>"
-                            class="btn btn-primary btn-sm">
-                        <i class="fas fa-pencil-alt"></i>Edit
-                    </a>
-                    </td>
-                    <td class="text-center col-1">
-                        <a href="/bookslist/delete/<%= AssignmentList[count]._id%>"
-                            class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash-alt"></i>Delete
-                    </a>
-                    </td>
-                </tr>    
-                    <%} %>
-            </table>
+            <h1>Active Assignments</h1>
+            <h2> <a href="/tickets/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add Assignment
+            </a></h2>
+            <div class="row">
+                <% for (let count = 0; count < AssignmentList.length; count++) { %>
+                    <div class="col-md-6 mb-4">
+                        <section>
+                        <div class="card border-dark">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <strong>Assignment Title:</strong> <%= AssignmentList[count].name %>
+                                </h5>
+                                <p class="card-text">
+                                    <strong>Class:</strong> <%= AssignmentList[count].class %><br>
+                                    <strong>Due Date:</strong> <%= AssignmentList[count].duedate %><br>
+                                    <strong>Description:</strong> <%= AssignmentList[count].description %><br>
+                                    <strong>Estimated Time:</strong> <%= AssignmentList[count].estTimeToComplete %> hours
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="/tickets/edit/<%= AssignmentList[count]._id %>" class="btn btn-primary btn-sm me-2">
+                                        <i class="fas fa-pencil-alt"></i> Edit
+                                    </a>
+                                    <a href="/tickets/delete/<%= AssignmentList[count]._id %>" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i> Delete
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+                <% } %>
+            </div>
         </div>
+    </section>
     </div>
 </main>
+</div>
 <%- include ../partials/footer.ejs %>

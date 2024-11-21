@@ -42,10 +42,10 @@ router.post('/edit/:id', async(req, res, next) => {
             "class": req.body.class,
             "duedate": req.body.class,
             "description": req.body.description,
-            "Estimated Time to Complete": req.body.estTimeToComplete
+            "estTimeToComplete": req.body.estTimeToComplete
         })
         Assignment.findByIdAndUpdate(id, updatedAssignment).then(() => {
-            res.redirect('/asignments');
+            res.redirect('/tickets');
         })
     }
     catch(err) {
@@ -74,9 +74,9 @@ router.post('/add', async(req, res, next) => {
         let newAssignment = Assignment({
             "name": req.body.name,
             "class": req.body.class,
-            //"duedate": req.body.class,
+            "duedate": req.body.duedate,
             "description": req.body.description,
-            "Estimated Time to Complete": req.body.estTimeToComplete
+            "estTimeToComplete": req.body.estTimeToComplete
         });
         Assignment.create(newAssignment).then(() => {
             res.redirect('/tickets');

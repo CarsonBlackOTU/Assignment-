@@ -5,7 +5,7 @@ let AssignmentModel = mongoose.Schema({
     class: String,
     duedate: Date,
     description: String,
-    estTimeToComplete: Number
+    estTimeToComplete: String
     },
     {
         collection: "assignments"

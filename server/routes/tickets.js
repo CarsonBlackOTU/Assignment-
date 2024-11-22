@@ -18,14 +18,14 @@ router.get('/', async(req, res, next) => {
         }
 });
 
-router.get('/edit/:id', async(req, res, next) => { // Every profile or account has a specific token or ID that indicates specific privileges.
+router.get('/edit/:id', async(req, res, next) => { 
     try {
         const id = req.params.id;
         console.log(id);
-        const AssignmentToEdit = await Assignment.findById(id); // Mongoose query
+        const AssignmentToEdit = await Assignment.findById(id); 
         res.render('tickets/edit', { 
             title: 'Assignment',
-            Assignment: AssignmentToEdit // Send the document with the requested ID.
+            Assignment: AssignmentToEdit 
         })
     }
     catch(err) {
@@ -40,7 +40,7 @@ router.post('/edit/:id', async(req, res, next) => {
             "_id": id,
             "name": req.body.name,
             "class": req.body.class,
-            "duedate": req.body.class,
+            "duedate": req.body.duedate,
             "description": req.body.description,
             "estTimeToComplete": req.body.estTimeToComplete
         })

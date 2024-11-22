@@ -2,11 +2,12 @@
 <!-- Add - Dev -->
 <%- include ../partials/header.ejs %>
 <%- include ../partials/navbar.ejs %>
-
+<div id = "wrapper">
+<section id = "large">
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1><%= title %></h1>
+            <h1>Add New Assignment</h1>
             <!-- Form to add a new ticket -->
             <form class="form" method="POST" action="/tickets/add">
                 <div class="form-group">
@@ -29,11 +30,12 @@
                     <label for="compNumberField">Estimated completion time</label>
                     <input type="number" class="form-control" id="compNumberField" placeholder="Enter number(hours)" name="estTimeToComplete" required>
                 </div>
-                <button class="btn btn-primary" type="submit">Add Ticket<i class="fas fa-plus-circle"></i></button>  
-                <a href="/tickets" class="btn btn-warning">Cancel<i class="fas fa-undo"></i></a>    
+                <button class="btn btn-success" type="submit"> Add Assignment <i class="fas fa-plus-circle"></i></button>  
+                <a href="/tickets" class="btn btn-danger"> Cancel <i class="fas fa-undo"></i></a>    
             </form>
         </div>
     </div>
 </div>
-
+</section>
+</div>
 <%- include ../partials/footer.ejs %>

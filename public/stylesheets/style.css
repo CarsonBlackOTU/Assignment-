@@ -1,16 +1,11 @@
+
 body {
-  body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  }
 
 }
 
-a {
-  color: #00B7FF;
-}
 
 #small{
-  color: white;
   background-color: rgb(39, 39, 67);
   margin-bottom:20px;
   padding: 10px;
@@ -22,15 +17,36 @@ a {
 background-color: rgb(154, 154, 202);
 border-radius: 20px;
 border: 8px solid black;
-margin-left: 25%;
-margin-right: 25%;
-width: 50%;
-height: 2000px;
+margin-left: 26%;
+margin-right: 26%;
+width: 48%;
+height: 100%;
 padding: 1%;}
 
 #wrapper {
   background-image: linear-gradient(black, rgb(128, 128, 203));
   height: 100%;
+}
+
+#landing {
+  background-image: url(bannernew4.jpg);
+  border-radius: 20px;
+  border: 8px solid black;
+  padding: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 60%;
+  height: 35%;
+  padding: 1%;
+}
+h1{
+  color: white !important;
+  background-color: rgb(17, 3, 27);
+  border: 8px solid black;
+  border-radius: 20px;
+}
+h3 {
+  color: white !important;
 }
 
 

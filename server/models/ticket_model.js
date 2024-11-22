@@ -3,7 +3,7 @@ let mongoose = require('mongoose');
 let AssignmentModel = mongoose.Schema({
     name: String,
     class: String,
-    duedate: Date,
+    duedate: String,
     description: String,
     estTimeToComplete: String
     },

@@ -1,14 +1,13 @@
-
 <%- include('partials/header.ejs') %>
 <%- include('partials/navbar.ejs') %>
 
 <div id="wrapper">
-    
-        <img src="PurpleBanner.jpg">
-    
-    <h1>Welcome to the Assignment Tracker Application!</h1>
-    <a href="/tickets/add" class="btn btn-primary btn-lg m-2">Create New Assignment</a>
-    <a href="/tickets" class="btn btn-primary btn-lg m-2">Manage Active Assignments</a>
+    <section id = "landing">
+    <h1>Welcome to the Assignment Tracker Application <i class="fa-brands fa-atlassian"></i></h1>
+    <h3>Create and manage a list of assingments using this interactive tool.</h3>
+    <a href="/tickets/add" class="btn btn-info btn-lg m-4">Create New Assignment</a>
+    <a href="/tickets" class="btn btn-info btn-lg m-4">Manage Active Assignments</a>
+    </section>
 </div>
 </body>
 <%- include('partials/footer.ejs') %>

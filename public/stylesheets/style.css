@@ -22,13 +22,14 @@ a {
 background-color: rgb(154, 154, 202);
 border-radius: 20px;
 border: 8px solid black;
-margin-left: 20%;
-margin-right: 20%;
-width: 60%;
-height: 1200px;
+margin-left: 25%;
+margin-right: 25%;
+width: 50%;
+height: 2000px;
 padding: 1%;}
 
 #wrapper {
   background-image: linear-gradient(black, rgb(128, 128, 203));
-
+  height: 100%;
 }
+

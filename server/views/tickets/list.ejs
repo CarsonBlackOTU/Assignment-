@@ -1,6 +1,8 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/navbar.ejs %>
+
 <div id = wrapper>
+<section id = "large">
 <main class="container">
     <div class="row">      
         <div class="offset-md-1 col-md-10">
@@ -11,7 +13,7 @@
             <div class="row">
                 <% for (let count = 0; count < AssignmentList.length; count++) { %>
                     <div class="col-md-6 mb-4">
-                        <section>
+                        <section id = "small">
                         <div class="card border-dark">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -38,8 +40,7 @@
                 <% } %>
             </div>
         </div>
-    </section>
-    </div>
 </main>
+</section>
 </div>
 <%- include ../partials/footer.ejs %>

@@ -1,5 +1,7 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
 
 }
 
@@ -7,7 +9,7 @@ a {
   color: #00B7FF;
 }
 
-section{
+#small{
   color: white;
   background-color: rgb(39, 39, 67);
   margin-bottom:20px;
@@ -16,14 +18,17 @@ section{
   border-radius: 20px;
 }
 
+#large{
+background-color: rgb(154, 154, 202);
+border-radius: 20px;
+border: 8px solid black;
+margin-left: 20%;
+margin-right: 20%;
+width: 60%;
+height: 1200px;
+padding: 1%;}
 
 #wrapper {
-  background-color: rgb(128, 128, 203);
-  border-radius: 20px;
-  border: 8px solid black;
-  margin-left: 20%;
-  margin-right: 20%;
-  width: 60%;
-  height: 1200px;
-  padding: 1%;
+  background-image: linear-gradient(black, rgb(128, 128, 203));
+
 }

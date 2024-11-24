@@ -3,7 +3,7 @@
 <div id = "wrapper">
 <section id = "large">
 <main class="container">
-     <!-- Create a Card based layout using grid and card bootstrap elements-->
+     <!-- Create a Card based layou using grid and card bootstrap elements-->
     <div class="row">      
         <div class="offset-md-1 col-md-10">
             <h1><i class="fa-solid fa-list"></i> Active Assignments</h1>
@@ -30,16 +30,16 @@
                 <i class="fas fa-pencil-alt"></i> Edit
                     </a>
                     <!-- Button trigger modal from bootstrap https://getbootstrap.com/docs/4.0/components/modal/ -->
-                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#confirmModal<%= AssignmentList[count]._id %>">
                     <i class="fas fa-trash-alt"></i> Delete
                 </button>
                 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="confirmModal<%= AssignmentList[count]._id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Confirm Assignment Deletion</h5>
+                        <h5 class="modal-title" id="confirmModalLabel<%= AssignmentList[count]._id %>">Confirm Assignment Deletion</h5>
                         </div>
                         <div class="modal-body">
                         <h6>This Action Cannot Be Undone!</h6>

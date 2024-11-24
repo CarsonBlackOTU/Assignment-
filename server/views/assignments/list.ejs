@@ -28,9 +28,28 @@
                 <a href="/assignments/edit/<%= AssignmentList[count]._id %>" class="btn btn-primary btn-sm me-2">
                 <i class="fas fa-pencil-alt"></i> Edit
                     </a>
-                    <a href="/assignments/delete/<%= AssignmentList[count]._id %>"  class="btn btn-danger btn-sm">
+                    <!-- Button trigger modal from bootstrap https://getbootstrap.com/docs/4.0/components/modal/ -->
+                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <i class="fas fa-trash-alt"></i> Delete
-                        </a>
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirm Assignment Deletion</h5>
+                        </div>
+                        <div class="modal-body">
+                        <h6>This Action Cannot Be Undone!</h6>
+                        </div>
+                        <div class="modal-footer">
+                        <a href="/assignments/delete/<%= AssignmentList[count]._id %>" > <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button></a>
+                        <a href = "/assignments"><button type="button" class="btn btn-primary">Cancel</button></a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
                         </div>
                         </div>
                         </div>

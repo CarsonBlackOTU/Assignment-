@@ -13,9 +13,5 @@ router.get('/home', (req, res, next) => {
 router.get('/add', (req, res, next) => {
   res.render('assignments/add', { title: 'Add' });
 }); 
-router.get('/Confirm', (req, res, next) => {
-  res.render('ConfirmDel', { title: 'Add' });
-}); 
-
 
 module.exports = router;

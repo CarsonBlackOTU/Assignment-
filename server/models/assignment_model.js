@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-// create a book model
+
 let AssignmentModel = mongoose.Schema({
     name: String,
     class: String,

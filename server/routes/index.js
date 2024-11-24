@@ -11,7 +11,10 @@ router.get('/home', (req, res, next) => {
   res.render('index', { title: 'Home' });
 });
 router.get('/add', (req, res, next) => {
-  res.render('tickets/add', { title: 'Add' });
+  res.render('assignments/add', { title: 'Add' });
+}); 
+router.get('/Confirm', (req, res, next) => {
+  res.render('ConfirmDel', { title: 'Add' });
 }); 
 
 

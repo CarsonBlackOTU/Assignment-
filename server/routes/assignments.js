@@ -1,18 +1,18 @@
 let express = require('express');
 let router = express.Router(); 
 let mongoose = require('mongoose'); 
-let Assignment = require('../models/ticket_model');
+let Assignment = require('../models/assignment_model');
 
 router.get('/', async(req, res, next) => {
     try {
         const AssignmentList = await Assignment.find();
-        res.render('tickets/list',{
+        res.render('assignments/list',{
             title: 'Assignment',
             AssignmentList: AssignmentList
         })}
         catch(err){
             console.error(err);
-            res.render('tickets/list', {
+            res.render('assignments/list', {
                 error: 'Error on the server'
             })
         }
@@ -23,7 +23,7 @@ router.get('/edit/:id', async(req, res, next) => {
         const id = req.params.id;
         console.log(id);
         const AssignmentToEdit = await Assignment.findById(id); 
-        res.render('tickets/edit', { 
+        res.render('assignments/edit', { 
             title: 'Assignment',
             Assignment: AssignmentToEdit 
         })
@@ -45,7 +45,7 @@ router.post('/edit/:id', async(req, res, next) => {
             "estTimeToComplete": req.body.estTimeToComplete
         })
         Assignment.findByIdAndUpdate(id, updatedAssignment).then(() => {
-            res.redirect('/tickets');
+            res.redirect('/assignments');
         })
     }
     catch(err) {
@@ -56,14 +56,14 @@ router.post('/edit/:id', async(req, res, next) => {
 
 router.get('/add',async(req, res, next) => {
     try {
-        res.render('tickets/add', {
+        res.render('assignments/add', {
             title: 'Add Assignment'
         })
     }
     catch(err)
     {
         console.error(err);
-        res.render('tickets/list', {
+        res.render('assignments/list', {
             error:'Error on the server'
         })
     }
@@ -79,13 +79,13 @@ router.post('/add', async(req, res, next) => {
             "estTimeToComplete": req.body.estTimeToComplete
         });
         Assignment.create(newAssignment).then(() => {
-            res.redirect('/tickets');
+            res.redirect('/assignments');
         })
     }
     catch(err)
     {
         console.error(err);
-        res.render('/tickets', {
+        res.render('/assignments', {
             error:'Error on the server'
         })
     }
@@ -97,12 +97,12 @@ router.get('/delete/:id', async(req, res, next) => {
     try {
         let id=req.params.id;
         Assignment.deleteOne({_id:id}).then(() => {
-            res.redirect('/tickets')
+            res.redirect('/assignments')
         })
     }
     catch(error) {
         console.error(err);
-        res.render('/tickets',{
+        res.render('/assignments',{
             error:'Error on the server'
         })
     }

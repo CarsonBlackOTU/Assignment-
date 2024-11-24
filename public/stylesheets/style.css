@@ -1,9 +1,11 @@
 
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
 }
 
+label{
+  color: white;
+}
 
 #small{
   background-color: rgb(39, 39, 67);
@@ -14,7 +16,7 @@ body {
 }
 
 #large{
-background-color: rgb(154, 154, 202);
+background-color: rgb(39, 14, 68);
 border-radius: 20px;
 border: 8px solid black;
 margin-left: 26%;

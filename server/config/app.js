@@ -6,23 +6,22 @@ let logger = require('morgan');
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let ticketsRouter = require('../routes/tickets');
+let assignmentsRouter = require('../routes/assignments');
 
 let app = express();
 
-let mongoose = require('mongoose'); // Import the Mongoose module
-let DB = require('./db'); // Import the module with the URI
-mongoose.connect(DB.URI); // Connect to the database
+let mongoose = require('mongoose'); 
+let DB = require('./db'); 
+mongoose.connect(DB.URI); 
 let mongoDB = mongoose.connection; 
-mongoDB.on('error',console.error.bind(console,'Connection Error')) // Display any errors to console
-mongoDB.once('open',() => { // If the connection is open, print a success message to console. 
+mongoDB.on('error',console.error.bind(console,'Connection Error'))
+mongoDB.once('open',() => { 
   console.log('MongoDB Connected')
 });
 mongoose.connect(DB.URI,{useNewURIParser:true,
   useUnifiedTopology:true
 });
 
-// view engine setup
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
@@ -36,7 +35,7 @@ app.use(express.static("public/stylesheets"));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/tickets', ticketsRouter);
+app.use('/assignments', assignmentsRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

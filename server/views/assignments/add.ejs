@@ -1,5 +1,3 @@
-<!-- Add - Dev -->
-<!-- Add - Dev -->
 <%- include ../partials/header.ejs %>
 <%- include ../partials/navbar.ejs %>
 <div id = "wrapper">
@@ -7,9 +5,8 @@
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1>Add New Assignment</h1>
-            <!-- Form to add a new ticket -->
-            <form class="form" method="POST" action="/tickets/add">
+            <h1>Add New Assignment <i class="fa-regular fa-square-plus"></i></h1>
+            <form class="form" method="POST" action="/assignments/add">
                 <div class="form-group">
                     <label for="nameTextField">Assignment Title</label>
                     <input type="text" class="form-control" id="nameTextField" placeholder="Enter Title" name="name" required>
@@ -27,11 +24,11 @@
                     <textarea class="form-control" id="descriptionTextArea" placeholder="Enter the Description" name="description" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="compNumberField">Estimated completion time</label>
+                    <label for="compNumberField">Estimated completion time(h)</label>
                     <input type="number" class="form-control" id="compNumberField" placeholder="Enter number(hours)" name="estTimeToComplete" required>
                 </div>
                 <button class="btn btn-success" type="submit"> Add Assignment <i class="fas fa-plus-circle"></i></button>  
-                <a href="/tickets" class="btn btn-danger"> Cancel <i class="fas fa-undo"></i></a>    
+                <a href="/assignments" class="btn btn-danger"> Cancel <i class="fa-solid fa-xmark"></i></a>    
             </form>
         </div>
     </div>

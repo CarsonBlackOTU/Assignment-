@@ -1,12 +1,11 @@
-<%- include('partials/header.ejs') %>
-<%- include('partials/navbar.ejs') %>
-
+<%- include partials/header.ejs %>
+<%- include partials/navbar.ejs %>
 <div id="wrapper">
     <section id = "landing">
     <h1>Welcome to the Assignment Tracker Application <i class="fa-brands fa-atlassian"></i></h1>
-    <h3>Create and manage a list of assingments using this interactive tool.</h3>
-    <a href="/tickets/add" class="btn btn-info btn-lg m-4">Create New Assignment</a>
-    <a href="/tickets" class="btn btn-info btn-lg m-4">Manage Active Assignments</a>
+    <h3>Create and manage a list of assignments using this interactive tool.</h3>
+    <a href="/assignments/add" class="btn btn-info btn-lg m-4">Create New Assignment <i class="fa-regular fa-square-plus"></i></a>
+    <a href="/assignments" class="btn btn-info btn-lg m-4">Manage Active Assignments <i class="fa-solid fa-bars-progress"></i></a>
     </section>
 </div>
 </body>

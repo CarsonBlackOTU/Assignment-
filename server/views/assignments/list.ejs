@@ -1,35 +1,34 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/navbar.ejs %>
-
-<div id = wrapper>
+<div id = "wrapper">
 <section id = "large">
 <main class="container">
     <div class="row">      
         <div class="offset-md-1 col-md-10">
-            <h1>Active Assignments</h1>
-            <h2> <a href="/tickets/add" class="btn btn-success" role="button">
+            <h1><i class="fa-solid fa-list"></i> Active Assignments</h1>
+            <h2> <a href="/assignments/add" class="btn btn-success" role="button">
                 <i class="fa-regular fa-square-plus"></i> Add Assignment
             </a></h2>
             <div class="row">
             <% for (let count = 0; count < AssignmentList.length; count++) { %>
-            <div class="col-md-6 mb-4">
+            <div class="col-md-6">
                 <section id = "small">
                 <div class="card border-dark">
                 <div class="card-body">
                 <h5 class="card-title">
-                <strong>Assignment Title:</strong> <%= AssignmentList[count].name %>
+                <strong> <i class="fa-solid fa-list"></i> Assignment Title:</strong> <%= AssignmentList[count].name %>
                 </h5>
                 <p class="card-text">
                 <strong>Class:</strong> <%= AssignmentList[count].class %><br>
                 <strong>Due Date:</strong> <%= AssignmentList[count].duedate %><br>
                 <strong>Description:</strong> <%= AssignmentList[count].description %><br>
-                <strong>Estimated Time:</strong> <%= AssignmentList[count].estTimeToComplete %> hours
+                <strong>Estimated Work Time:</strong> <%= AssignmentList[count].estTimeToComplete %> hours
                 </p>
                 <div class="d-flex justify-content-end">
-                <a href="/tickets/edit/<%= AssignmentList[count]._id %>" class="btn btn-primary btn-sm me-2">
+                <a href="/assignments/edit/<%= AssignmentList[count]._id %>" class="btn btn-primary btn-sm me-2">
                 <i class="fas fa-pencil-alt"></i> Edit
                     </a>
-                    <a href="/tickets/delete/<%= AssignmentList[count]._id %>" class="btn btn-danger btn-sm">
+                    <a href="/assignments/delete/<%= AssignmentList[count]._id %>"  class="btn btn-danger btn-sm">
                     <i class="fas fa-trash-alt"></i> Delete
                         </a>
                         </div>

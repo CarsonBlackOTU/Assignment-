@@ -1,12 +1,11 @@
-<!-- Edit - Carson -->
-<%- include ../Partials/header.ejs%>
-<%- include ../Partials/navbar.ejs%>
+<%- include ../partials/header.ejs %>
+<%- include ../partials/navbar.ejs %>
 <div id = "wrapper">
-<section id="large">
-<div class="container"></div>
+<section id = "large">
+<div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1>Edit Active Assignment</h1>
+            <h1>Edit Active Assignment <i class="fas fa-pencil-alt"></i></h1>
             <form class="form" method="POST">
                 <div class="form-group">
                     <label for="nameTextField">Assignment Title</label>
@@ -25,13 +24,14 @@
                     <textarea class="form-control" id="descriptionTextArea" placeholder="Enter the Description" name="description" required><%= Assignment.description %>"</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="compNumberField">Estimated completion time</label>
+                    <label for="compNumberField">Estimated completion time(h)</label>
                     <input type="number" class="form-control" id="compNumberField" placeholder="Enter number(hours)" name="estTimeToComplete" value="<%= Assignment.estTimeToComplete %>"  required>
                 </div>
-                <button class="btn btn-success" type="submit">Add Assignment<i class="fas fa-plus-circle"></i></button>  
-                <a href="/tickets" class="btn btn-danger">Cancel<i class="fas fa-undo"></i></a>    
+                <button class="btn btn-success" type="submit"> Confirm Edit <i class="fa-solid fa-square-check"></i></button>  
+                <a href="/assignments" class="btn btn-danger">Cancel <i class="fa-solid fa-xmark"></i></a>    
             </form>
         </div>
+    </div>
     </div>
 </section>
 </div>

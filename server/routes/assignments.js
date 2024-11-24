@@ -91,7 +91,6 @@ router.post('/add', async(req, res, next) => {
     }
 });
 
-/* Delete Functionality - Carson */ 
 
 router.get('/delete/:id', async(req, res, next) => {
     try {
